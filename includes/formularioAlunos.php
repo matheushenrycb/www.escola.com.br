@@ -13,11 +13,11 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="nomeID">Nome</label>
-                    <input type="text" class="form-control" onclick="mudarCorInput()" name="nome" value="<?=$obAluno->nome?>" id="nomeID" placeholder="nome">
+                    <input type="text" class="form-control"  name="nome" value="<?=$obaluno->nome?>" placeholder="nome">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="cpf">CPF</label>
-                    <input type="text" class="form-control" name="cpf" value="<?=$obAluno->cpf?>"id="cpf" placeholder="CPF" autocomplete="off" maxlength="14">
+                    <input type="text" class="form-control" name="cpf" value="<?=$obaluno->cpf?>"id="cpf" placeholder="CPF" autocomplete="off" maxlength="14">
 
                 </div>
                 <div class="form-group col-md-3">
@@ -31,7 +31,7 @@
 
                         <div class="form-check form-check-inline">
                             <label class="form-control">
-                                <input type="radio" name="genero" value="f"<?=$obAluno->genero=='n'?'checked':''?>>Feminino
+                                <input type="radio" name="genero" value="f"<?=$obaluno->genero=='n'?'checked':''?>>Feminino
                             </label>
                         </div>
                     </div>
@@ -40,41 +40,29 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="telefoneID">Telefone</label>
-                    <input type="tel" class="form-control" name="telefone" id="teleFoneID">
+                    <input type="tel" class="form-control" name="telefone" value="<?=$obaluno->telefone?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="cepID">CEP</label>
-                    <input type="number" class="form-control" name="cep" id="cepID">
+                    <input type="number" class="form-control" name="cep" value="<?=$obaluno->cep?>" >
                 </div>
+
                 <div class="form-group col-md-4">
-                    <label for="turmaID">Turma</label>
-                    <select name="turma" id="turmaID" class="form-control">
-                        <option value="0" selected>Escolher...</option>
-                        <option value="1225">1225</option>
-                        <option value="1225">1226</option>
-                        <option value="32212">32212</option>
-                        <option value="32213">32213</option>
-                    </select>
+                    <label for="cepID">Turma</label>
+                    <input type="text"  class="form-control" name="turma" value="<?=$obaluno->turma?>" >
                 </div>
-            </div>
-            <div class="form-row">
+
                 <div class="form-group col-md-6">
-                    <label for="estadoID">Estado Origem</label>
-                    <select id="estadoID" onchange="procurarCidade()" name="estadoorigem" class="form-control">
-                        <option value="0" selected>Escolher...</option>
-                        <option value="sp">São Paulo</option>
-                        <option value="ms">Mato Grosso do Sul</option>
-                    </select>
+                    <label for="cepID">Estado</label>
+                    <input type="text"  class="form-control" name="estadoorigem" value="<?=$obaluno->estadoorigem?>" >
                 </div>
+
+
                 <div class="form-group col-md-6">
-                    <label for="cidadeID">Cidade Origem</label>
-                    <select id="cidadeID" name="cidadeorigem" class="form-control">
-                        <option value="0" selected>Escolher...</option>
-                        <option value="cbr">Corumbá</option>
-                        <option value="ldr">Ladário</option>
-                    </select>
+                    <label for="cepID">Cidade</label>
+                    <input type="text" class="form-control" name="cidadeorigem" value="<?=$obaluno->cidadeorigem?>">
                 </div>
-            </div>
+
             <button type="submit" class="btn btn-success">Salvar</button>
         </form>
     </div>

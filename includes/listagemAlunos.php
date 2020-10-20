@@ -1,4 +1,5 @@
 <?php
+$resultados='';
 $mensagem = '';
 if (isset($_GET['status'])) {
     switch ($_GET['status']) {
@@ -23,12 +24,10 @@ foreach ($alunos as $aluno) {
                         <td>' . $aluno->estadoorigem . '</td>
                         <td>' . $aluno->cidadeorigem . '</td>
                         <td>
-                        <a href="editar.php=' . $aluno->id . '">
-                            <button type="button" class="btn btn-primary">Editar</button>
+                        <a href="editar.php?id=' . $aluno->id . '"><button type="button" class="btn btn-primary">Editar</button>
                         </a>
                         
-                        <a href="excluir.php=' . $aluno->id . '">
-                        <button type="button" class="btn btn-danger">Excluir</button>
+                        <a href="excluir.php?id=' . $aluno->id . '"><button type="button" class="btn btn-danger">Excluir</button>
                         </a>
                         </td>
                         
@@ -49,7 +48,7 @@ $resultados = strlen($resultados) ? $resultados : '<tr>
 
     </section>
     <section>
-        <table class="table bg-ligth mt-3">
+        <table class="table bg-white mt-3">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -62,7 +61,9 @@ $resultados = strlen($resultados) ? $resultados : '<tr>
                     <th>Cidade</th>
                 </tr>
             </thead>
-
+                <tbody>
+                <?=$resultados?>
+                </tbody>
 
         </table>
 

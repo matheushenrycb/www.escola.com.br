@@ -18,9 +18,9 @@ $_POST['cep'], $_POST['turma'], $_POST['estadoorigem'], $_POST['cidadeorigem']))
     $obaluno->telefone  = $_POST['telefone'];
     $obaluno->cep  = $_POST['cep'];
     $obaluno->turma  = $_POST['turma'];
-    $obaluno->estado  = $_POST['estadoorigem'];
-    $obaluno->cidade  = $_POST['cidadeorigem'];
-    // print_r($obaluno);
+    $obaluno->estadoorigem  = $_POST['estadoorigem'];
+    $obaluno->cidadeorigem  = $_POST['cidadeorigem'];
+    //print_r($obaluno);
     $obaluno->cadastrar();
     header('location: index.php?status-success');
     exit;

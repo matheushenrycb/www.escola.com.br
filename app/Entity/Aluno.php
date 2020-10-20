@@ -78,7 +78,7 @@ class Aluno
         ]);
         return true;
 
-                    //print_r($this);
+                   // print_r($this);
     
         //atribuir o id de aluno na instancia
 
@@ -120,7 +120,7 @@ class Aluno
     /**
      * metodo responsavel por encontrar aluno atraves do id
      * @param integer
-     * @return aluno
+     * @return Aluno
      * 
      */
     public static function getAluno($id){
