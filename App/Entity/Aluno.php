@@ -91,7 +91,7 @@ class Aluno
      * 
      */
     public function atualizar(){
-        return (new Database('alunos'))->update('id='.$this->id,[
+        return (new Database('aluno'))->update('id='.$this->id,[
             'nome' => $this->nome,
             'cpf' => $this->cpf,
             'genero' => $this->genero,
@@ -110,7 +110,7 @@ class Aluno
      * @return array
      * 
      */
-    public static function getAluno($where = null, $order=null, $limit=null){
+    public static function getAlunos($where = null, $order=null, $limit=null){
         return( new Database('aluno'))-> select($where, $order,$limit)
                                       -> fetchAll(PDO::FETCH_CLASS, self::class);
     }
@@ -123,7 +123,7 @@ class Aluno
      * @return aluno
      * 
      */
-    public static function getAlunos($id){
+    public static function getAluno($id){
         return( new Database('aluno'))-> select('id='.$id)
                                         ->fetchObject(self::class);  
 

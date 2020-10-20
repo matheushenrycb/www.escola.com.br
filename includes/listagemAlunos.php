@@ -12,7 +12,7 @@ if (isset($_GET['status'])) {
 }
 
 $resultados = '';
-foreach ($aluno as $alunos) {
+foreach ($alunos as $aluno) {
     $resultados .= '<tr>
                         <td>' . $aluno->id . '</td>
                         <td>' . $aluno->nome . '</td>

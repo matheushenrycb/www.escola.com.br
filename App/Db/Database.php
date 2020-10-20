@@ -94,7 +94,7 @@ class Database
         $binds = array_pad([], count($fields), '?');
 
         //monta query
-        $query = 'INSERT INTO' . $this->table . '(' . implode(',', $fields) . ') VALUES(' . implode(',', $binds) . ')';
+        $query = 'INSERT INTO ' . $this->table . '(' . implode(',', $fields) . ') VALUES(' . implode(',', $binds) . ')';
 
         //executa o insert
         $this->execute($query, array_values($values));

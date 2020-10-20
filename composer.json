@@ -1,9 +1,8 @@
 {
-
     "name":"escola/matricula",
     "autoload": {
         "psr-4":{
-           "App\\":"classes/" 
+           "App\\":"App/" 
         }
     }
 }
