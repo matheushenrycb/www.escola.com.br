@@ -22,8 +22,6 @@ if(!isset($_GET['id'])or !is_numeric($_GET['id'])){
 
 //Validação do POST
 if (isset($_POST['excluir'])) {
-
-   
     $obaluno->excluir();
     header('location: index.php?status-success');
     exit;

@@ -1,20 +1,20 @@
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
-//print_r($_POST);
+print_r($_POST);
+
 define('TITLE', 'Editar Aluno');
 use \App\Entity\Aluno;
 
-$obaluno = new Aluno;
-
-
 if (isset($_GET['id']) or !is_numeric($_GET['id'])) {
+    //print_r($obaluno);
     header('location:index.php?status=error');
     exit;
 }
 
 $obaluno = Aluno::getAluno($_GET['id']);
 if (!$obaluno instanceof Aluno) {
+    
     header('location:index.php?status=error');
     exit;
 }
@@ -31,8 +31,7 @@ $_POST['cep'], $_POST['turma'], $_POST['estadoorigem'], $_POST['cidadeorigem']))
     $obaluno->turma  = $_POST['turma'];
     $obaluno->estadoorigem  = $_POST['estadoorigem'];
     $obaluno->cidadeorigem  = $_POST['cidadeorigem'];
-    print_r($obaluno);
-    //$obaluno->atualizar();
+    $obaluno->atualizar();
     header('location: index.php?status-success');
     exit;
 }
