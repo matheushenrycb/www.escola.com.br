@@ -12,15 +12,14 @@ if (isset($_POST['nome'], $_POST['cpf'], $_POST['genero'], $_POST['telefone'],
 $_POST['cep'], $_POST['turma'], $_POST['estadoorigem'], $_POST['cidadeorigem'])) {
 
    
-    $obaluno->nome  = $_POST['nome'];
-    $obaluno->cpf  = $_POST['cpf'];
-    $obaluno->genero  = $_POST['genero'];
-    $obaluno->telefone  = $_POST['telefone'];
-    $obaluno->cep  = $_POST['cep'];
-    $obaluno->turma  = $_POST['turma'];
-    $obaluno->estadoorigem  = $_POST['estadoorigem'];
-    $obaluno->cidadeorigem  = $_POST['cidadeorigem'];
-    //print_r($obaluno);
+    $obaluno->nome= $_POST['nome'];
+    $obaluno->cpf= $_POST['cpf'];
+    $obaluno->genero= $_POST['genero'];
+    $obaluno->telefone= $_POST['telefone'];
+    $obaluno->cep= $_POST['cep'];
+    $obaluno->turma= $_POST['turma'];
+    $obaluno->estadoorigem= $_POST['estadoorigem'];
+    $obaluno->cidadeorigem= $_POST['cidadeorigem'];
     $obaluno->cadastrar();
     header('location: index.php?status-success');
     exit;

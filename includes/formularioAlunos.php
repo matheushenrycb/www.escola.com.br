@@ -9,7 +9,7 @@
     <h2 class="mt-3 ml-3"><?=TITLE?></h2>
     <div class="container">
 
-        <form id="formCadastroDeAluno" method="post">
+        <form id="formCadastroDeobaluno" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="nomeID">Nome</label>

@@ -94,8 +94,7 @@ class Database
         $binds = array_pad([], count($fields), '?');
 
         //monta query
-        $query = 'INSERT INTO ' . $this->table . '(' . implode(',', $fields) . ') VALUES(' . implode(',', $binds) . ')';
-
+        $query = 'INSERT INTO ' . $this->table . ' (' . implode(',', $fields) . ') VALUES (' . implode(',', $binds) . ')';
         //executa o insert
         $this->execute($query, array_values($values));
 
@@ -130,23 +129,34 @@ class Database
      * @param array $values [fild =>value]
      * @return boolean
      */
-    public function update($where, $values) {
-        $fields=array_keys($values);
-        $query='UPDATE '.$this->table .' SET '.implode('=?,',$fields).'=? WHERE'.$where;
+    public function update($where, $values)
+    {
+        //DADOS DA QUERY
+        $fields = array_keys($values);
+
+        //MONTA A QUERY
+        $query = 'UPDATE ' . $this->table . ' SET ' . implode('=?,', $fields) . '=? WHERE ' . $where;
+        
+        //EXECUTAR A QUERY
         $this->execute($query, array_values($values));
+
+        //RETORNA SUCESSO
         return true;
     }
-     /**
+    /**
      * metodo que exclui dados do banco
      * @param  string $where
      * @return boolean
      */
-    public function delete($where){
-
-        $query = 'DELETE FROM '.$this->table.'WHERE'.$where;
-
+    public function delete($where)
+    {
+        //MONTA A QUERY
+        $query = 'DELETE FROM ' . $this->table . ' WHERE ' . $where;
+        
+        //EXECUTA A QUERY
         $this->execute($query);
 
+        //RETORNA SUCESSO
         return true;
     }
 }
