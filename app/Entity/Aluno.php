@@ -124,7 +124,7 @@ class Aluno
      * 
      */
     public static function getAluno($id){
-        return( new Database('aluno'))-> select('id='.$id)
+        return( new Database('aluno'))-> select('id='.$id, null, null,'*')
                                         ->fetchObject(self::class);  
 
     }      

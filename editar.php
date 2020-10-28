@@ -7,8 +7,8 @@ require __DIR__ . '/vendor/autoload.php';
 use \App\Entity\Aluno;
 
 define('TITLE', 'Editar Aluno');
-if (isset($_GET['id']) or !is_numeric($_GET['id'])) {
-
+if (!isset($_GET['id']) or !is_numeric($_GET['id'])) {
+   // echo "<script>alert('". $_GET['id'] . "');</script>";
     header('location:index.php?status=error');
     exit;
 }
@@ -16,14 +16,15 @@ if (isset($_GET['id']) or !is_numeric($_GET['id'])) {
 $obaluno = Aluno::getAluno($_GET['id']);
 if (!$obaluno instanceof Aluno) {
     // echo($obaluno);
+    echo "<script>alert('". $_GET['id'] . "');</script>";
     header('location:index.php?status=error');
     exit;
 }
 //Validação do POST
 if (isset($_POST['nome'], $_POST['cpf'], $_POST['genero'], $_POST['telefone'],
 $_POST['cep'], $_POST['turma'], $_POST['estadoorigem'], $_POST['cidadeorigem'])) {
-
-
+   // echo "<script>alert('". $_GET['id'] . "');</script>";
+    
     $obaluno->nome  = $_POST['nome'];
     $obaluno->cpf  = $_POST['cpf'];
     $obaluno->genero  = $_POST['genero'];
@@ -32,8 +33,8 @@ $_POST['cep'], $_POST['turma'], $_POST['estadoorigem'], $_POST['cidadeorigem']))
     $obaluno->turma  = $_POST['turma'];
     $obaluno->estadoorigem  = $_POST['estadoorigem'];
     $obaluno->cidadeorigem  = $_POST['cidadeorigem'];
-    print_r($obaluno);
-    //$obaluno->atualizar();
+    //print_r($obaluno);
+    $obaluno->atualizar();
     header('location: index.php?status-success');
     exit;
 }

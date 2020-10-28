@@ -18,7 +18,7 @@ if(!isset($_GET['id'])or !is_numeric($_GET['id'])){
     header('location: index.php?status=error');
     exit;
  }
- exit;
+ 
 
 //Validação do POST
 if (isset($_POST['excluir'])) {
@@ -27,5 +27,5 @@ if (isset($_POST['excluir'])) {
     exit;
 }
 include __DIR__ . '/includes/header.php';
-include __DIR__ . '/includes/confirmar-exclusao.php';
+include __DIR__ . '/includes/confirmaExcluir.php';
 include __DIR__ . '/includes/footer.php';

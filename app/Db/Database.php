@@ -116,9 +116,9 @@ class Database
     public function select($where = null, $order = null, $limit = null, $fields = '*')
     {
         //DADOS  DAS QUERY
-        $where = strlen($where) ? 'WHERE' . $where : '';
-        $order = strlen($order) ? 'ORDER BY' . $order : '';
-        $limit = strlen($limit) ? 'LIMIT' . $limit : '';
+        $where = strlen($where) ? ' WHERE ' . $where : '';
+        $order = strlen($order) ? ' ORDER BY ' . $order : '';
+        $limit = strlen($limit) ? ' LIMIT ' . $limit : '';
 
         //monta a query
         $query = 'SELECT ' . $fields . ' FROM ' . $this->table . ' ' . $where . ' ' . $order . ' ' . $limit;
@@ -135,8 +135,9 @@ class Database
         $fields = array_keys($values);
 
         //MONTA A QUERY
-        $query = 'UPDATE ' . $this->table . ' SET ' . implode('=?,', $fields) . '=? WHERE ' . $where;
         
+        $query = 'UPDATE ' . $this->table . ' SET ' . implode('=?,', $fields) . '=? WHERE ' . $where;
+        echo "<script>alert('". $query . "');</script>";
         //EXECUTAR A QUERY
         $this->execute($query, array_values($values));
 
@@ -152,7 +153,7 @@ class Database
     {
         //MONTA A QUERY
         $query = 'DELETE FROM ' . $this->table . ' WHERE ' . $where;
-        
+        echo $query;
         //EXECUTA A QUERY
         $this->execute($query);
 

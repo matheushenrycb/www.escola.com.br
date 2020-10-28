@@ -35,7 +35,7 @@ foreach ($alunos as $aluno) {
 }
 
 $resultados = strlen($resultados) ? $resultados : '<tr>
-    <td colspan="6" class="text-center">Nenhum aluno encontrado</td>
+    <td colspan="6" class="text-center">        Nenhum aluno encontrado</td>
     </tr>';
 ?>
 
